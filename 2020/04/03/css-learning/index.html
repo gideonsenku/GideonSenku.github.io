@@ -13,7 +13,7 @@
 <meta property="og:description" content="CSSCSS选择器&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt;     &lt;title&gt;&lt;&#x2F;title&gt; &lt;&#x2F;head&gt; &lt;body&gt;   &lt;!-- 父子&#x2F;直接子类选择器--&gt;   &lt;div&gt;&lt;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;   &lt;">
 <meta property="og:locale" content="zh">
 <meta property="article:published_time" content="2020-04-02T16:18:48.000Z">
-<meta property="article:modified_time" content="2020-04-02T16:22:09.046Z">
+<meta property="article:modified_time" content="2020-04-04T07:41:56.301Z">
 <meta property="article:author" content="GideonSenku">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -296,6 +296,26 @@ overflow:hidden</code></pre>
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 </li>
+</ul>
+<h3 id="水平垂直居中汇总"><a href="#水平垂直居中汇总" class="headerlink" title="水平垂直居中汇总"></a>水平垂直居中汇总</h3><h4 id="1-水平居中"><a href="#1-水平居中" class="headerlink" title="1.水平居中"></a>1.水平居中</h4><ul>
+<li><p>内联元素：</p>
+<p>父元素，设置<code>text-align: center</code></p>
+</li>
+<li><p>定宽块级元素：</p>
+</li>
+</ul>
+<p>自身，设置<code>margin: 0 auto</code></p>
+<ul>
+<li><p>定宽浮动元素：<br>设置定位后，可以重新布局元素框，进而定位到中点，是从中点开始排布，因此需要会拉自身宽度一半，达到居中的效果。</p>
+<p>自身，设置<code>position: relative; left: 50%; margin-left: -(1/2) width</code><br>自身，设置<code>position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;</code></p>
+</li>
+<li><p>未知宽度的块级元素：<br>自身，设置<code>display: table; margin: auto</code><br>自身，设置<code>position: absolute; left: 50%; transform: translateX(-50%)</code><br>自身，设置<code>width: fit-content; margin: auto</code><br>自身，设置<code>display: flex; justify-content: center;</code><br>父级，设置<code>display: flex; flex-direction: column; 自身，设置align-self: center</code><br>父级，设置<code>display: flex; 自身，设置margin: auto</code><br>父级，设置<code>display: inline-block; position: relative; left: 50%</code> 自身，设置<code>position: relative; right: 50%</code></p>
+</li>
+</ul>
+<h4 id="2-垂直居中"><a href="#2-垂直居中" class="headerlink" title="2.垂直居中"></a>2.垂直居中</h4><ul>
+<li>内联元素：<br>自身，设置<code>line-height: height</code><br>父级，设置<code>line-height: son-height;</code>自身，设置<code>vertical-align: middle</code></li>
+<li>知道容器高度并且容器内只有一个元素：<br>自身，设置<code>position: relative; top: 50%; transform: translateY(-50%)</code></li>
+<li>不知道容器与自身高度：<br>父级，设置<code>position: relative;</code> 自身，设置<code>position: absolute；top: 50%; transform: translateY(-50%)</code><br>父级，设置<code>display: flex; align-items: center</code></li>
 </ul>
 <p>To be continue…</p>
 
