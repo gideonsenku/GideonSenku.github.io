@@ -13,7 +13,7 @@
 <meta property="og:description" content="CSSCSS选择器&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt;     &lt;title&gt;&lt;&#x2F;title&gt; &lt;&#x2F;head&gt; &lt;body&gt;   &lt;!-- 父子&#x2F;直接子类选择器--&gt;   &lt;div&gt;&lt;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;   &lt;">
 <meta property="og:locale" content="zh">
 <meta property="article:published_time" content="2020-04-02T16:18:48.000Z">
-<meta property="article:modified_time" content="2020-04-04T07:41:56.301Z">
+<meta property="article:modified_time" content="2020-04-20T01:28:13.369Z">
 <meta property="article:author" content="GideonSenku">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -317,6 +317,45 @@ overflow:hidden</code></pre>
 <li>知道容器高度并且容器内只有一个元素：<br>自身，设置<code>position: relative; top: 50%; transform: translateY(-50%)</code></li>
 <li>不知道容器与自身高度：<br>父级，设置<code>position: relative;</code> 自身，设置<code>position: absolute；top: 50%; transform: translateY(-50%)</code><br>父级，设置<code>display: flex; align-items: center</code></li>
 </ul>
+<h3 id="图片的底部白边"><a href="#图片的底部白边" class="headerlink" title="图片的底部白边"></a>图片的底部白边</h3><pre><code class="html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      div{border:2px solid;}
+      img{display:block}
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;img src=&quot;1.jpg&quot;&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<blockquote>
+<p>图片的父元素是一个块盒，块盒高度自动，图片底部和父元素之间往往会出现白边</p>
+<p>常将图片属性<code>display:block</code>可解决该问题</p>
+</blockquote>
+<h3 id="行高的各种区别"><a href="#行高的各种区别" class="headerlink" title="行高的各种区别"></a>行高的各种区别</h3><blockquote>
+<p><code>linehight</code>值有多种</p>
+<p>数字<code>1.5</code> 像素<code>15px</code> em<code>1.5em</code>百分比 <code>150%</code> <code>normal</code></p>
+</blockquote>
+<pre><code class="css">body {
+  /* 使用数字方式,子元素会继承父元素的line-hight进行计算 */
+  font-size:12px;
+  line-hight:1.5;
+}
+body {
+  font-size:12px;
+  line-hight:1.5em;
+  line-hight:160%;
+}
+p {
+  /* 在数字情况下 line-hight为 10*1.5=15px */
+  /* 在em或者百分比的情况下 line-height是 12*1.5   12.160% */
+  font-size:10px;
+}</code></pre>
+<blockquote>
+<p>所以在重置样式中选择数字形式，使得子元素继承父元素的行高值</p>
+</blockquote>
 <p>To be continue…</p>
 
   </article>
